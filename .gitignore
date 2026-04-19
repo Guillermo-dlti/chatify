@@ -4,3 +4,5 @@
 node_modules/
 chatify-app/node_modules/
 server-chatify/node_modules/
+server-chatify/chat.db
+chat.db

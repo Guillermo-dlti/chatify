@@ -8,8 +8,9 @@ function Chats() {
   const [messages, setMessage] = useState([]);
 
   useEffect(() => {
-    socket.on('chat message', (msg) => {
+    socket.on('chat message', (msg, serverOffset) => {
       console.log("Mensaje desde Server: ", msg);
+      socket.auth.serverOffset = serverOffset;
       setMessage((prev) => [...prev, msg])
     });
 
