@@ -12,15 +12,17 @@ function App() {
   useEffect(() => {
     const onConnect = () => {
       console.log("conectado");
-    }
-    const onDisconnect = () => {
-      console.log("desconectado");
-    }
-
+    };
     socket.on("connect", onConnect);
-    socket.on("disocnnect", onDisconnect);
 
-
+    return () => {
+      socket.off('disconnect');
+      socket.off('connect', onConnect);
+    }
+    // const onDisconnect = () => {
+    //   console.log("desconectado");
+    // }
+    // socket.on("disocnnect", onDisconnect);
   }, [])
 
   return (

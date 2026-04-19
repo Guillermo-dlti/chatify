@@ -6,12 +6,12 @@ function MyForm() {
 
     const handleOnChange = (e) => {
         setMessage(e.target.value);
-    }
+    };
 
     const handleClick = (e) => {
         e.preventDefault();
         socket.emit('chat message', message);
-    }
+    };
 
 
 
@@ -23,10 +23,11 @@ function MyForm() {
                 name="message"
                 value={message}
                 onChange={handleOnChange}
+                className='border-2'
             />
             <button onClick={handleClick}>Send</button>
         </div>
     )
 }
 
-export default MyForm
+export default MyForm;
